@@ -3,9 +3,108 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 body {
-    background: #03122b;
+    background: #bbd3fb;
+}
+
+.banner {
+    width: 80%;
+    margin: 5% auto 10%;
+    padding: 30px 60px 0;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b89bff;
+    box-shadow: 0px 0px 60px 5px #f5f5f5;
+}
+
+.banner-content {
+    flex-basis: 50%;
+    padding-bottom: 5%;
+}
+
+.banner-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.banner-content p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.banner-content a {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: 2px solid #f5f5f5;
+    display: inline-block;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.banner-content a:hover {
+    border: 2px solid #02b4fc;
+    background: #02b4fc;
+}
+
+.banner-img {
+    flex-basis: 50%;
+}
+
+.banner-img img {
+    width: 100%;
+}
+
+@media (max-width:1600px) {
+    .banner h1 {
+        font-size: 40px;
+    }
+
+    .banner-content p {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .banner a {
+        padding: 12px;
+    }
+}
+
+@media (max-width:1100px) {
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner a {
+        padding: 8px;
+    }
+}
+
+@media (max-width:900px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:600px) {
+    .banner h1 {
+        font-size: 24px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
 }
