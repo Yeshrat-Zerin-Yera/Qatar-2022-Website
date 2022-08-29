@@ -3,13 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: #f5f5f5;
 }
 
 body {
-    background: #bbd3fb;
+    background: #ffffff;
 }
 
+/* Banner Section */
 .banner {
     width: 80%;
     margin: 5% auto 10%;
@@ -30,6 +30,7 @@ body {
 .banner-content h1 {
     font-size: 60px;
     font-weight: 700;
+    color: #f5f5f5;
 }
 
 .banner-content p {
@@ -37,6 +38,7 @@ body {
     font-weight: 400;
     margin-bottom: 30px;
     margin-top: 20px;
+    color: #f5f5f5;
 }
 
 .banner-content a {
@@ -48,11 +50,16 @@ body {
     display: inline-block;
     text-decoration: none;
     transition: 1s;
+    color: #f5f5f5;
 }
 
 .banner-content a:hover {
     border: 2px solid #02b4fc;
     background: #02b4fc;
+}
+
+.banner-content a i {
+    color: #f5f5f5;
 }
 
 .banner-img {
@@ -63,8 +70,110 @@ body {
     width: 100%;
 }
 
+/* Blog Section */
+.blogs {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10%;
+    display: grid;
+    grid-template-columns: 300px repeat(3, 1fr);
+    gap: 24px;
+}
+
+#sidebar {
+    grid-row: 1/4;
+    background: transparent;
+}
+
+.bookmark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #b89bff;
+    border-radius: 10px;
+}
+
+.bookmark a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #161616;
+    background: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+#marked {
+    background: #02b4fc;
+    color: #ffffff;
+}
+
+.blog {
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.blog-img img {
+    width: 100%;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content a {
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #161616;
+    border-radius: 5px;
+    padding: 3px 6px;
+    text-decoration: none;
+    color: #161616;
+}
+
+.blog-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #161616;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    display: flex;
+    gap: 30px;
+    color: #161616;
+}
+
+#view-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: -3/-1;
+}
+
+#view-all a {
+    display: none;
+    margin: auto;
+    padding: 12px 29px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    background: #02b4fc;
+    border-radius: 5px;
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+/* Media Query */
 @media (max-width:1600px) {
-    .banner h1 {
+    .banner-content h1 {
         font-size: 40px;
     }
 
@@ -73,17 +182,53 @@ body {
         margin-top: 10px;
     }
 
-    .banner a {
+    .banner-content a {
         padding: 12px;
     }
 }
 
+@media (max-width:1400px) {
+    .blogs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-invisible {
+        display: none;
+    }
+
+    #sidebar {
+        grid-column: 1/-1;
+    }
+
+    .bookmark {
+        flex-direction: row;
+        background: transparent;
+    }
+
+    .bookmark a {
+        border: 1px solid #E8E8E8;
+    }
+
+    #view-all a {
+        display: inline-block;
+    }
+}
+
 @media (max-width:1100px) {
-    .banner h1 {
+    .banner-content h1 {
         font-size: 30px;
     }
 
-    .banner a {
+    .banner-content p {
+        white-space: nowrap;
+        width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .banner-content a {
         padding: 8px;
     }
 }
@@ -94,17 +239,51 @@ body {
         text-align: center;
     }
 
-    .banner a {
+    .banner-content p {
+        width: 300px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .banner-content a {
         font-size: 16px;
+    }
+
+    #view-all {
+        display: none;
+    }
+
+    .blogs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #sidebar {
+        grid-column: 1/-1;
+    }
+
+    .bookmark {
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .bookmark a {
+        width: auto;
+        padding: 10px 30px;
     }
 }
 
 @media (max-width:600px) {
-    .banner h1 {
+    .banner-content h1 {
         font-size: 24px;
     }
 
-    .banner p {
+    .banner-content p {
         font-size: 14px;
+        width: 200px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 10px;
     }
 }
